@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pantalla de Acceso</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #d04c9b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Acceso al Sistema</h2>
+    <form id="loginForm">
+      
+        <label for="username">Nombre de Usuario:</label>
+      <input type="text" id="username" name="username">
+      <div id="usernameError" class="error"></div>
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password">
+      <div id="passwordError" class="error"></div>
+
+      <button type="submit">Accesar</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Evita que el formulario se envíe sin validar
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      let valid = true;
+
+      // Limpia errores anteriores
+      document.getElementById("usernameError").textContent = "";
+      document.getElementById("passwordError").textContent = "";
+
+      // Validación de nombre de usuario
+      if (username === "") {
+        document.getElementById("usernameError").textContent = "El nombre de usuario es requerido.";
+        valid = false;
+      } else if (username.length < 3) {
+        document.getElementById("usernameError").textContent = "Debe tener al menos 3 caracteres.";
+        valid = false;
+      }
+
+      // Validación de contraseña
+      if (password === "") {
+        document.getElementById("passwordError").textContent = "La contraseña es requerida.";
+        valid = false;
+      } else if (password.length < 6) {
+        document.getElementById("passwordError").textContent = "Debe tener al menos 6 caracteres.";
+        valid = false;
+      }
+
+      // Si es válido, puedes continuar (por ejemplo, redirigir o mostrar mensaje)
+      if (valid) {
+        alert("Acceso concedido. Bienvenido/a " + username);
+        // window.location.href = "pagina_principal.html"; // Redirigir si quieres
+      }
+    });
+  </script>
+</body>
+</html>
