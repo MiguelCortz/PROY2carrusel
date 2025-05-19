@@ -31,6 +31,25 @@ $products = $product->read();
     <script src = "../assets/js/lateralcontrol.js" defer></script>
     <!-- barra lateral -->
 
+
+    <style>
+.btna {
+
+    display: inline-block;
+    background: #7a237a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    margin-left: 10%;
+    flex-direction: column;
+}
+
+</style>
+
 </head>
 <body>
 
@@ -40,9 +59,11 @@ $products = $product->read();
         <h1>Bienvenido a nuestra tienda</h1>
         <div class="carousel">
             <div class="slides" id="slides">
-                <img src="../assets/img/img1.png" alt="Imagen 1">
-                <img src="../assets/img/img2.jpg" alt="Imagen 2">
-                <img src="../assets/img/img3.jpg" alt="Imagen 3">
+                <img src="../assets/img/1.jpg" alt="Imagen 1">
+                <img src="../assets/img/2.jpg" alt="Imagen 2">
+                <img src="../assets/img/3.jpg" alt="Imagen 3">
+                <img src="../assets/img/4.jpg" alt="Imagen 4">
+                <img src="../assets/img/5.jpg" alt="Imagen 5">
             </div>
             <div class="buttons">
                 <button onclick="prevSlide()">❮</button>
@@ -62,15 +83,15 @@ $products = $product->read();
                 <!--sublista de elementos seleccionados-->
                 <!--argunmentos con los que llega-->
                 <button onclick="window.location.href=
-                '/proyecto2/public/forms/showbycategory.php?categoria=1'" class="btn">electrónica</button>
+                '/proyecto2/public/forms/showbycategory.php?categoria=1'" class="btna">electrónica</button>
                 <button onclick="window.location.href=
-                '/proyecto2/public/forms/showbycategory.php?categoria=2'" class="btn">ropa</button>
+                '/proyecto2/public/forms/showbycategory.php?categoria=2'" class="btna">ropa</button>
                 <button onclick="window.location.href=
-                '/proyecto2/public/forms/showbycategory.php?categoria=3'" class="btn">hogar</button>
+                '/proyecto2/public/forms/showbycategory.php?categoria=3'" class="btna">hogar</button>
                 <button onclick="window.location.href=
-                '/proyecto2/public/forms/showbycategory.php?categoria=4'" class="btn">juguetes</button>
+                '/proyecto2/public/forms/showbycategory.php?categoria=4'" class="btna">juguetes</button>
                 <button onclick="window.location.href=
-                '/proyecto2/public/forms/showbycategory.php?categoria=2'" class="btn">alimentos</button>
+                '/proyecto2/public/forms/showbycategory.php?categoria=2'" class="btna">alimentos</button>
 
         </aside>
 

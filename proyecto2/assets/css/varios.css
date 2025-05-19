@@ -25,6 +25,19 @@
         margin-left: 10%;
 }
 
+#aside button{
+        display: inline-block;
+    background: #7a237a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    margin-left: 10%;
+    flex-direction: column;
+}
 
 .btn {
 
@@ -40,6 +53,22 @@
     margin-left: 10%;
     flex-direction: column;
 }
+
+.btna {
+
+    display: inline-block;
+    background: #7a237a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    margin-left: 10%;
+    flex-direction: column;
+}
+
 
 #callinaside{
     right: 5%;

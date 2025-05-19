@@ -40,3 +40,26 @@ $product = new Product($db);
     <?php include 'public/partials/footer.php'; ?>
 </body>
 </html>
+
+<?php
+// Conexión a la base de datos
+$conexion = new mysqli("localhost", "usuario", "password", "ecommerce");
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
+}
+
+// Obtener lista de categorías
+$categorias = $conexion->query("SELECT id, name FROM categories");
+
+// Obtener categoría seleccionada
+$categoria_id = isset($_GET['categoria']) ? intval($_GET['categori4']) : 0;
+
+// Consultar productos filtrados
+$productos = [];
+if ($categoria_id > 0) {
+    $stmt = $conexion->prepare("SELECT nombre, descripcion, precio FROM productos WHERE categoria_id = ?");
+    $stmt->bind_param("i", $categoria_id);
+    $stmt->execute();
+    $productos = $stmt->get_result();
+}
+?>
